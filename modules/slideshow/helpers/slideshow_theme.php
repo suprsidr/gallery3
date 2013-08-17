@@ -18,9 +18,27 @@
  * Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA  02110-1301, USA.
  */
 class slideshow_theme_Core {
+  
+  static function page_top($theme){
+    //$ss_theme = module::get_var("slideshow", "theme")?module::get_var("slideshow", "theme"):'classic';
+    //return '    <link rel="stylesheet" href="'.url::abs_file('modules/slideshow/vendor/themes/' . $ss_theme . '/galleria.' . $ss_theme . '.css').'">'
+    //  ."\n";
+  }
+  
   static function page_bottom($theme) {
-    $proto = request::protocol();
-    return "<script src=\"$proto://e.cooliris.com/slideshow/v/37732/go.js\" " .
-      "type=\"text/javascript\"></script>";
+    if($theme->item->is_album()){
+      $id = $theme->item()->id;
+    }else{
+      $id = $theme->item()->parent_id;
+    }
+    $ss_theme = module::get_var("slideshow", "theme")?module::get_var("slideshow", "theme"):'classic';
+    return '    <script src="'.url::site("slideshow/js/".$id).'"></script>'
+      ."\n"
+      .'    <script src="'.url::abs_file("modules/slideshow/vendor/galleria-1.2.9.min.js").'"></script>'
+      ."\n"
+      .'    <script src="'.url::abs_file('modules/slideshow/vendor/themes/' . $ss_theme . '/galleria.' . $ss_theme . '.min.js').'"></script>'
+      ."\n"
+      .'    <link rel="stylesheet" href="'.url::abs_file('modules/slideshow/vendor/themes/' . $ss_theme . '/galleria.' . $ss_theme . '.css').'">'
+      ."\n";
   }
 }

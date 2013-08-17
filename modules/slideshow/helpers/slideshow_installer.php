@@ -19,13 +19,16 @@
  */
 class slideshow_installer {
   static function install() {
-    module::set_var("slideshow", "max_scale", 0);
+    module::set_var("slideshow", "theme", 'classic');
+    module::set_var("slideshow", "size", module::get_var("gallery", "resize_size"));
   }
 
   static function upgrade($version) {
-    if ($version == 1) {
-      module::set_var("slideshow", "max_scale", 0);
-      module::set_version("slideshow", $version = 2);
+    if ($version < 3) {
+      module::clear_var("slideshow", "max_scale");
+      module::set_var("slideshow", "theme", "classic");
+      module::set_var("slideshow", "size", module::get_var("gallery", "resize_size"));
+      module::set_version("slideshow", $version = 3);
     }
   }
 
