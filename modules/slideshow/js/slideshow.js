@@ -3,7 +3,7 @@
  */
 ( function(window, $) {
     window.g3_Galleria = {};
-    var items =   <?= $items ?>, code = '<?= $code ?>', images = [], w = h = 0, full = false, current;
+    var items =   <?= $items ?>, images = [], w = h = 0, full = false, current;
     window.g3_slideshow = {
       show : function(start) {
         var area = 0, padding = {
