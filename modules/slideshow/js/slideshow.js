@@ -92,7 +92,7 @@
           g3_slideshow.reform(current, window.g3_Galleria);
         });
         if ('<?= $ss_theme ?>' == 'classic') {
-          $('.galleria-container').append('<div class="galleria-info-link galleria-fullscreen" style="display:block;z-index:999;top: 15px;right: 15px;background: #000000 url(/gallery3/modules/slideshow/vendor/themes/classic/fullscreen.png) no-repeat 3.5px 3.5px;width:20px;height:20px;"></div>');
+          $('.galleria-container').append('<div class="galleria-info-link galleria-fullscreen" style="display:block;z-index:999;top: 15px;right: 15px;background: #000000 url(<?= $fs_png ?>) no-repeat 3.5px 3.5px;width:20px;height:20px;"></div>');
         }
         $(document).on('click', '.galleria-fullscreen', function(e) {
           full = !full;
