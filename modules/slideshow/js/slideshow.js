@@ -10,7 +10,7 @@
           'azur' : 40,
           'classic' : 50,
           'twelve' : 29,
-          'miniml' : 30,
+          'miniml' : 40,
           'fullscreen' : 0,
           'folio' : 0
         };
@@ -68,7 +68,7 @@
               break
           }
           if (i == items.length - 1) {
-            $("html").append('<div id="modal" style="background-color: rgba(0,0,0,.6);width:100%;min-width:100%;height:100%;min-height:100%;position:absolute;margin:auto;top:0;right:0;bottom:0;left:0;z-index:999;" /><div id="galleria" style="height: 100%; max-height:' + h + 'px;width:100%;max-width:' + w + 'px;position:absolute;margin:auto;top:0;right:0;bottom:0;left:0;z-index:1000;"/>');
+            $("html").append('<div id="modal" style="background-color: rgba(0,0,0,.6);width:100%;min-width:100%;height:100%;min-height:100%;position:fixed;margin:auto;top:0;right:0;bottom:0;left:0;z-index:999;"><div id="galleria" style="height: 100%; max-height:' + h + 'px;width:100%;max-width:' + w + 'px;position:absolute;margin:auto;top:0;right:0;bottom:0;left:0;z-index:1000;"></div></div>');
             g3_slideshow.play(start);
           }
         })
